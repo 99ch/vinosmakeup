@@ -406,3 +406,16 @@ select {
     transform: translateX(-50%);
   }
 }
+
+/* Responsive overflow guard */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section_layout468 {
+  width: min(100%, 100vw);
+  max-width: 100%;
+  box-sizing: border-box;
+}

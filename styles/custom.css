@@ -154,6 +154,15 @@ select {
   -webkit-appearance: none;
 }
 
+:root {
+  --ever-navbar-height: 0rem;
+  --ever-navbar-offset: 0rem;
+}
+
+html {
+  scroll-padding-top: var(--ever-navbar-offset);
+}
+
 @media screen and (max-width: 991px) {
   .hide,
   .hide-tablet {
@@ -162,6 +171,10 @@ select {
 }
 
 @media screen and (max-width: 767px) {
+  :root {
+    --ever-navbar-height: 4rem;
+  }
+
   .hide-mobile-landscape {
     display: none !important;
   }
@@ -418,4 +431,19 @@ body {
   width: min(100%, 100vw);
   max-width: 100%;
   box-sizing: border-box;
+}
+
+/* Fully retire the legacy navbar */
+.navbar19_component {
+  display: none !important;
+  min-height: 0;
+  position: static;
+  top: auto;
+}
+
+/* Offset hero content so sticky navbar never overlaps */
+.header83_content-wrapper {
+  height: calc(100vh - var(--ever-navbar-offset));
+  min-height: calc(100vh - var(--ever-navbar-offset));
+  top: var(--ever-navbar-offset);
 }

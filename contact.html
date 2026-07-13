@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html data-wf-domain="www.vinosmakeup.com" data-wf-site="67f28d1d69b4c6d58d1cd1da" lang="fr" class=" w-mod-js w-mod-ix">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contact - VINO'S MAKEUP</title>
+  <meta
+    content="Contactez VINO'S MAKEUP. Nous sommes à votre écoute pour toute question, demande d'information ou prise de rendez-vous. Retrouvez-nous à Jakarta et Surabaya."
+    name="description">
+  <meta content="Contact - VINO'S MAKEUP" property="og:title">
+  <meta
+    content="Contactez VINO'S MAKEUP. Nous sommes à votre écoute pour toute question, demande d'information ou prise de rendez-vous. Retrouvez-nous à Jakarta et Surabaya."
+    property="og:description">
+  <meta
+    content="https://cdn.prod.website-files.com/67f28d1d69b4c6d58d1cd1da/686f68301bac78cdd97f75b8_EVER%20COVER%20IMAGE.png"
+    property="og:image">
+  <meta content="Contact - VINO'S MAKEUP" property="twitter:title">
+  <meta
+    content="Contactez VINO'S MAKEUP. Nous sommes à votre écoute pour toute question, demande d'information ou prise de rendez-vous. Retrouvez-nous à Jakarta et Surabaya."
+    property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="styles/ever-april.webflow.shared.d3e74e15b.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://cdn.prod.website-files.com/67f28d1d69b4c6d58d1cd1da/68e8de998f5eb7f2f4d4020f_logogram%20EVER%20(1)_32%20x%2032%20px%20brown.jpg"
+    rel="shortcut icon" type="image/x-icon">
+  <link
+    href="https://cdn.prod.website-files.com/67f28d1d69b4c6d58d1cd1da/68e8dea82f23eec5eb4c0a24_logogram%20EVER%20(1)_256%20x%20256%20px%20brown.jpg"
+    rel="apple-touch-icon">
+
+  <style>
+    [element-theme="1"] {
+      --color--background: var(--light--background);
+      --color--text: var(--light--text);
+      --color--button-background: var(--light--button-background);
+      --color--button-text: var(--light--button-text);
+    }
+
+    [element-theme="2"] {
+      --color--background: var(--dark--background);
+      --color--text: var(--dark--text);
+      --color--button-background: var(--dark--button-background);
+      --color--button-text: var(--dark--button-text);
+    }
+
+    /* Contact Page Styles */
+    .contact-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #F5F1ED 0%, #E8E0D5 100%);
+      padding: 120px 2rem 3rem;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: #8B7355;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #A89080;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .contact-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .contact-form-wrapper {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      font-size: 2rem;
+      color: #8B7355;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .contact-form p {
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 1rem;
+      color: #8B7355;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #E8E0D5;
+      border-radius: 8px;
+      background: white;
+      color: #333;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #8B7355;
+      box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 1.125rem 2rem;
+      background: #8B7355;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background: #A89080;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(139, 115, 85, 0.3);
+    }
+
+    .submit-button:active {
+      transform: translateY(0);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #8B7355 0%, #A89080 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .info-card h3 {
+      font-size: 1.3rem;
+      color: #8B7355;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .info-card p {
+      color: #666;
+      line-height: 1.7;
+      margin: 0.5rem 0 0 0;
+      font-size: 1rem;
+    }
+
+    .info-card a {
+      color: #8B7355;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .info-card a:hover {
+      color: #A89080;
+      text-decoration: underline;
+    }
+
+    .locations-section {
+      background: #FAFAF8;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+    }
+
+    .locations-section h2 {
+      font-size: 2.5rem;
+      color: #8B7355;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .location-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .location-card h3 {
+      font-size: 2rem;
+      color: #8B7355;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .location-details {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .location-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .location-item:hover {
+      background: #F5F1ED;
+    }
+
+    .location-item-icon {
+      font-size: 1.25rem;
+      color: #8B7355;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .location-item-text {
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid #E8E0D5;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border: 2px solid #8B7355;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #8B7355;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #8B7355;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+    }
+
+    .success-message {
+      display: none;
+      background: #E8F5E9;
+      border: 2px solid #4CAF50;
+      color: #2E7D32;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .success-message p {
+      margin: 0;
+    }
+
+    @media (max-width: 968px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-wrapper {
+        padding: 2rem;
+      }
+
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero {
+        padding: 100px 1.5rem 2rem;
+      }
+
+      .contact-container {
+        padding: 2rem 1.5rem;
+      }
+
+      .contact-form-wrapper {
+        padding: 1.5rem;
+      }
+
+      .info-card {
+        padding: 1.5rem;
+      }
+
+      .location-card {
+        padding: 1.5rem;
+      }
+
+      .locations-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="VINO'S MAKEUP - Accueil">
+        <img
+          src="https://cdn.prod.website-files.com/67f28d1d69b4c6d58d1cd1da/68e8dea82f23eec5eb4c0a24_logogram%20EVER%20(1)_256%20x%20256%20px%20brown.jpg"
+          alt="VINO'S MAKEUP Logo" width="40" height="40">
+      </a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-content">
+        <a href="index.html" class="mobile-menu-link">Accueil</a>
+        <a href="services.html" class="mobile-menu-link">Services</a>
+        <a href="gallerie.html" class="mobile-menu-link">Gallerie</a>
+        <a href="notre-histoire.html" class="mobile-menu-link">Notre Histoire</a>
+        <a href="rendez-vous.html" class="mobile-menu-link">Prise de Rendez-vous</a>
+        <a href="contact.html" class="mobile-menu-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div>
+        <h1>Contactez-Nous</h1>
+        <p>Nous sommes à votre écoute pour répondre à toutes vos questions</p>
+      </div>
+    </section>
+
+    <div class="contact-container">
+      <!-- Contact Grid -->
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>Envoyez-nous un Message</h2>
+          <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+
+          <div class="success-message" id="success-message">
+            <h4>✓ Message Envoyé !</h4>
+            <p>Merci pour votre message. Notre équipe vous répondra sous 24-48 heures.</p>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Nom complet *</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Téléphone</label>
+              <input type="tel" id="phone" name="phone" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Sujet *</label>
+              <input type="text" id="subject" name="subject" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Envoyer le Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon">📧</div>
+              <h3>Email</h3>
+            </div>
+            <p>
+              <a href="mailto:info@vinosmakeup.com">info@vinosmakeup.com</a><br>
+              <a href="mailto:contact@vinosmakeup.com">contact@vinosmakeup.com</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon">📱</div>
+              <h3>Téléphone</h3>
+            </div>
+            <p>
+              Jakarta: <a href="tel:+622123456789">+62 21 2345 6789</a><br>
+              Surabaya: <a href="tel:+623123456789">+62 31 2345 6789</a><br>
+              WhatsApp: <a href="https://wa.me/6281234567890">+62 812 3456 7890</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon">🕐</div>
+              <h3>Horaires d'Ouverture</h3>
+            </div>
+            <p>
+              <strong>Lundi - Samedi</strong><br>
+              09:00 - 19:00<br><br>
+              <strong>Dimanche</strong><br>
+              Sur rendez-vous uniquement
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="info-icon">💬</div>
+              <h3>Réseaux Sociaux</h3>
+            </div>
+            <p>
+              Suivez-nous sur Instagram, Facebook et TikTok pour découvrir nos dernières réalisations et offres
+              exclusives !
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locations Section -->
+      <div class="locations-section">
+        <h2>Nos Emplacements</h2>
+        <div class="locations-grid">
+          <!-- Jakarta -->
+          <div class="location-card">
+            <h3>📍 Jakarta</h3>
+            <div class="location-details">
+              <div class="location-item">
+                <div class="location-item-icon">🏢</div>
+                <div class="location-item-text">
+                  <strong>Adresse:</strong><br>
+                  Jl. Sudirman No. 123<br>
+                  Jakarta Pusat 10220<br>
+                  Indonesia
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item-icon">📞</div>
+                <div class="location-item-text">
+                  <strong>Téléphone:</strong><br>
+                  <a href="tel:+622123456789">+62 21 2345 6789</a>
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item-icon">✉️</div>
+                <div class="location-item-text">
+                  <strong>Email:</strong><br>
+                  <a href="mailto:jakarta@vinosmakeup.com">jakarta@vinosmakeup.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surabaya -->
+          <div class="location-card">
+            <h3>📍 Surabaya</h3>
+            <div class="location-details">
+              <div class="location-item">
+                <div class="location-item-icon">🏢</div>
+                <div class="location-item-text">
+                  <strong>Adresse:</strong><br>
+                  Jl. Pemuda No. 456<br>
+                  Surabaya 60271<br>
+                  Indonesia
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item-icon">📞</div>
+                <div class="location-item-text">
+                  <strong>Téléphone:</strong><br>
+                  <a href="tel:+623123456789">+62 31 2345 6789</a>
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item-icon">✉️</div>
+                <div class="location-item-text">
+                  <strong>Email:</strong><br>
+                  <a href="mailto:surabaya@vinosmakeup.com">surabaya@vinosmakeup.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://instagram.com/vinosmakeup" target="_blank" rel="noopener" class="social-link"
+            aria-label="Instagram">
+            📷
+          </a>
+          <a href="https://facebook.com/vinosmakeup" target="_blank" rel="noopener" class="social-link"
+            aria-label="Facebook">
+            👤
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="social-link"
+            aria-label="WhatsApp">
+            💬
+          </a>
+          <a href="https://tiktok.com/@vinosmakeup" target="_blank" rel="noopener" class="social-link"
+            aria-label="TikTok">
+            🎵
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script defer src="scripts/main.js"></script>
+  <script>
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      // In a real application, you would send this data to your server
+      console.log('Contact form data:', data);
+
+      // Show success message
+      successMessage.classList.add('show');
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Reset form
+      contactForm.reset();
+
+      // Hide success message after 8 seconds
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 8000);
+    });
+  </script>
+</body>
+
+</html>

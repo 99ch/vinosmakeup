@@ -361,3 +361,32 @@ select {
 [data-gsap] {
   visibility: hidden;
 }
+
+
+/* --- Footer : fond noir + texte blanc sur toutes les pages --- */
+.background-wooden {
+  background-image: none;
+  background-color: #000;
+  --color--text: #fff;
+  color: #fff;
+}
+
+.background-wooden a,
+.background-wooden .footer15_link,
+.background-wooden .footer15_legal-link,
+.background-wooden .footer15_credit-text {
+  color: #fff;
+}
+
+/* --- Wordmark VINO'S MAKEUP dans le footer --- */
+.footer-brand-text {
+  color: #fff;
+  font-family: Bradford, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(3rem, 12vw, 12rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 2rem 1rem;
+  white-space: nowrap;
+}

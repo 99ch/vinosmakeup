@@ -5760,7 +5760,7 @@ figcaption {
 }
 
 .header83-image-background {
-  background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), url("../images/vinos/Home-Page-Main-Header.png");
+  background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), url("../images/Home-Page-Main-Header.png");
   color: var(--_primitives---colors--white);
   background-position: 0 0, 0 0, 80% 50%;
   background-size: auto, auto, cover;

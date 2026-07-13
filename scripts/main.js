@@ -10,129 +10,134 @@
   });
 })(window.jQuery);
 
-class Scroll extends Lenis {
-  constructor() {
-    super({
-      duration: 1.5,
-      easing: function (t) {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-      },
-      direction: 'vertical',
-      smooth: true,
-      smoothTouch: false,
-      touchMultiplier: 1.5
-    });
-
-    this.time = 0;
-    this.isActive = true;
-    this.init();
-  }
-
-  init() {
-    this.config();
-    this.render();
-    this.handleEditorView();
-  }
-
-  config() {
-    var overscroll = document.querySelectorAll('[data-scroll="overscroll"]');
-    if (overscroll.length > 0) {
-      overscroll.forEach(function (item) {
-        item.setAttribute('onwheel', 'event.stopPropagation()');
+// Guard Lenis usage so other pages without the library do not break
+if (window.Lenis) {
+  class Scroll extends Lenis {
+    constructor() {
+      super({
+        duration: 1.5,
+        easing: function (t) {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        },
+        direction: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 1.5
       });
+
+      this.time = 0;
+      this.isActive = true;
+      this.init();
     }
 
-    var stop = document.querySelectorAll('[data-scroll="stop"]');
-    if (stop.length > 0) {
-      stop.forEach(
-        function (item) {
-          item.onclick = function () {
-            this.stop();
-            this.isActive = false;
-          }.bind(this);
-        }.bind(this)
-      );
+    init() {
+      this.config();
+      this.render();
+      this.handleEditorView();
     }
 
-    var start = document.querySelectorAll('[data-scroll="start"]');
-    if (start.length > 0) {
-      start.forEach(
-        function (item) {
-          item.onclick = function () {
-            this.start();
-            this.isActive = true;
-          }.bind(this);
-        }.bind(this)
-      );
-    }
+    config() {
+      var overscroll = document.querySelectorAll('[data-scroll="overscroll"]');
+      if (overscroll.length > 0) {
+        overscroll.forEach(function (item) {
+          item.setAttribute('onwheel', 'event.stopPropagation()');
+        });
+      }
 
-    var toggle = document.querySelectorAll('[data-scroll="toggle"]');
-    if (toggle.length > 0) {
-      toggle.forEach(
-        function (item) {
-          item.onclick = function () {
-            if (this.isActive) {
+      var stop = document.querySelectorAll('[data-scroll="stop"]');
+      if (stop.length > 0) {
+        stop.forEach(
+          function (item) {
+            item.onclick = function () {
               this.stop();
               this.isActive = false;
-            } else {
+            }.bind(this);
+          }.bind(this)
+        );
+      }
+
+      var start = document.querySelectorAll('[data-scroll="start"]');
+      if (start.length > 0) {
+        start.forEach(
+          function (item) {
+            item.onclick = function () {
               this.start();
               this.isActive = true;
-            }
-          }.bind(this);
-        }.bind(this)
-      );
-    }
+            }.bind(this);
+          }.bind(this)
+        );
+      }
 
-    var anchor = document.querySelectorAll('[data-scrolllink]');
-    if (anchor.length > 0) {
-      anchor.forEach(
-        function (item) {
-          var id = parseFloat(item.dataset.scrolllink);
-          var target = document.querySelector('[data-scrolltarget="' + id + '"]');
-          if (target) {
+      var toggle = document.querySelectorAll('[data-scroll="toggle"]');
+      if (toggle.length > 0) {
+        toggle.forEach(
+          function (item) {
             item.onclick = function () {
-              this.scrollTo(target);
+              if (this.isActive) {
+                this.stop();
+                this.isActive = false;
+              } else {
+                this.start();
+                this.isActive = true;
+              }
             }.bind(this);
-          }
-        }.bind(this)
-      );
+          }.bind(this)
+        );
+      }
+
+      var anchor = document.querySelectorAll('[data-scrolllink]');
+      if (anchor.length > 0) {
+        anchor.forEach(
+          function (item) {
+            var id = parseFloat(item.dataset.scrolllink);
+            var target = document.querySelector('[data-scrolltarget="' + id + '"]');
+            if (target) {
+              item.onclick = function () {
+                this.scrollTo(target);
+              }.bind(this);
+            }
+          }.bind(this)
+        );
+      }
+    }
+
+    render() {
+      this.raf((this.time += 10));
+      window.requestAnimationFrame(this.render.bind(this));
+    }
+
+    handleEditorView() {
+      var html = document.documentElement;
+      var config = { attributes: true, childList: false, subtree: false };
+
+      var callback = function (mutationList) {
+        mutationList.forEach(
+          function (mutation) {
+            if (mutation.type === 'attributes') {
+              var btn = document.querySelector('.w-editor-bem-EditSiteButton');
+              var bar = document.querySelector('.w-editor-bem-EditorMainMenu');
+              var addTrig = function (target) {
+                return target.addEventListener('click', function () {
+                  this.destroy();
+                });
+              }.bind(this);
+
+              if (btn) addTrig(btn);
+              if (bar) addTrig(bar);
+            }
+          }.bind(this)
+        );
+      }.bind(this);
+
+      var observer = new MutationObserver(callback);
+      observer.observe(html, config);
     }
   }
 
-  render() {
-    this.raf((this.time += 10));
-    window.requestAnimationFrame(this.render.bind(this));
-  }
-
-  handleEditorView() {
-    var html = document.documentElement;
-    var config = { attributes: true, childList: false, subtree: false };
-
-    var callback = function (mutationList) {
-      mutationList.forEach(
-        function (mutation) {
-          if (mutation.type === 'attributes') {
-            var btn = document.querySelector('.w-editor-bem-EditSiteButton');
-            var bar = document.querySelector('.w-editor-bem-EditorMainMenu');
-            var addTrig = function (target) {
-              return target.addEventListener('click', function () {
-                this.destroy();
-              });
-            }.bind(this);
-
-            if (btn) addTrig(btn);
-            if (bar) addTrig(bar);
-          }
-        }.bind(this)
-      );
-    }.bind(this);
-
-    var observer = new MutationObserver(callback);
-    observer.observe(html, config);
-  }
+  window.SmoothScroll = new Scroll();
+} else {
+  console.warn('Lenis not found; smooth scroll disabled on this page');
 }
-
-window.SmoothScroll = new Scroll();
 
 document.addEventListener('DOMContentLoaded', function () {
   var cmsItems = document.querySelectorAll('[data-item-number]');
@@ -146,13 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function () {
   var customEase =
     'M0,0,C0,0,0.13,0.34,0.238,0.442,0.305,0.506,0.322,0.514,0.396,0.54,0.478,0.568,0.468,0.56,0.522,0.584,0.572,0.606,0.61,0.719,0.714,0.826,0.798,0.912,1,1,1,1';
-  var counter = { value: 0 };
-  var loaderDuration = 6;
+  var hasVisited = sessionStorage.getItem('visited') !== null;
+  var counter = { value: hasVisited ? 95 : 0 };
+  var loaderDuration = hasVisited ? 0.6 : 6;
 
-  if (sessionStorage.getItem('visited') !== null) {
-    loaderDuration = 6;
-    counter = { value: 75 };
-  }
   sessionStorage.setItem('visited', 'true');
 
   var updateLoaderText = function () {
@@ -234,18 +236,93 @@ window.addEventListener('load', function () {
         .css(
           'transform',
           'translateY(' +
-            verticalAmount * progressCenter +
-            '%) rotate(' +
-            rotationAmount * progressCenter +
-            'deg)'
+          verticalAmount * progressCenter +
+          '%) rotate(' +
+          rotationAmount * progressCenter +
+          'deg)'
         );
     });
   };
 
-  flkty.on('scroll', function (progress) {
+  var ticking = false;
+  var lastProgress = 0;
+
+  var renderScroll = function () {
     setImagePositions();
-    window.jQuery('.progress_fill').css('width', progress * 100 + '%');
+    window.jQuery('.progress_fill').css('width', lastProgress * 100 + '%');
+    ticking = false;
+  };
+
+  flkty.on('scroll', function (progress) {
+    lastProgress = progress;
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(renderScroll);
+    }
   });
 
   setImagePositions();
 });
+
+// Navbar functionality - wrapped in DOMContentLoaded for safety
+document.addEventListener('DOMContentLoaded', function () {
+  initNavbar();
+});
+
+function initNavbar() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const navbar = document.querySelector('.navbar');
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  if (!hamburger || !mobileMenu) {
+    console.warn('Navbar elements not found');
+    return;
+  }
+
+  // Toggle menu
+  function toggleMenu(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const isActive = hamburger.classList.contains('active');
+
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', !isActive);
+
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = isActive ? '' : 'hidden';
+  }
+
+  // Close menu
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  // Hamburger click
+  hamburger.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking on a link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) &&
+      !hamburger.contains(e.target) &&
+      mobileMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+}

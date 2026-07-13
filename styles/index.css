@@ -46,20 +46,6 @@
 }
 
 
-/* --- Preloader / Loader --- */
-.preloader {
-  display: flex;
-}
-
-.loader {
-  display: flex;
-}
-
-html.w-editor .loader {
-  display: none;
-}
-
-
 /* --- Flickity : overrides globaux --- */
 .flickity-viewport {
   width: 100%;

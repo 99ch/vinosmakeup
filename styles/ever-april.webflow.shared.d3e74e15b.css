@@ -9692,7 +9692,7 @@ figcaption {
   }
 
   .header83-image-background {
-    background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 65%, var(--color--background) 98%), linear-gradient(to bottom, transparent, transparent), url("../images/vinos/Home-Page-Main-Header.png");
+    background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 65%, var(--color--background) 98%), linear-gradient(to bottom, transparent, transparent), url("../images/Home-Page-Main-Header.png");
     background-position: 0 0, 0 0, 80% 50%;
     background-size: auto, auto, auto;
   }
@@ -10153,10 +10153,10 @@ figcaption {
   }
 
   .header83-image-background {
-    background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 29%, var(--color--background) 49%), linear-gradient(to bottom, transparent, transparent), url("../images/vinos/Home-Page-Main-Header.png");
-    background-position: 0 0, 0 0, 80% 50%;
+    background-image: linear-gradient(180deg, var(--_primitives---opacity--transparent) 55%, var(--color--background) 95%), linear-gradient(to bottom, transparent, transparent), url("../images/Home-Page-Main-Header.png");
+    background-position: 0 0, 0 0, 80% 30%;
     background-repeat: repeat, repeat, no-repeat;
-    background-size: auto, auto, contain;
+    background-size: auto, auto, cover;
   }
 
   .header19_content, .testimonial32_component {

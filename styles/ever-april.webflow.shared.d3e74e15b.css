@@ -4628,7 +4628,8 @@ figcaption {
 }
 
 .background-wooden {
-  background-image: url("../images/68039b9c0f8de0d527dfe942_pexel%20.avif");
+  background-color: #e8dcc4;
+  background-image: url("../images/67fc9d3fdadd41892ec65066_texture-paper.avif");
   background-position: 0 0;
   background-size: cover;
 }

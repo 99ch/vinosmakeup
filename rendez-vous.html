@@ -247,10 +247,15 @@
     }
 
     .services-list li::before {
-      content: '✓';
-      color: #8B7355;
-      font-weight: bold;
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
       margin-right: 0.75rem;
+      vertical-align: -2px;
+      background-color: #8B7355;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
     }
 
     .success-message {
@@ -4153,7 +4158,7 @@
         <h2>Informations de Réservation</h2>
 
         <div class="success-message" id="success-message">
-          <h3>✓ Réservation Confirmée !</h3>
+          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:0.5rem"><polyline points="20 6 9 17 4 12"/></svg>Réservation Confirmée !</h3>
           <p>Merci ! Nous avons bien reçu votre demande de rendez-vous. Notre équipe vous contactera sous 24h pour
             confirmer votre réservation.</p>
         </div>
@@ -4242,7 +4247,7 @@
           <h3>Informations Pratiques</h3>
 
           <div class="info-item">
-            <div class="info-icon">📍</div>
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div class="info-content">
               <h4>Nos Emplacements</h4>
               <p>Jakarta & Surabaya<br>Adresses communiquées après réservation</p>
@@ -4250,7 +4255,7 @@
           </div>
 
           <div class="info-item">
-            <div class="info-icon">🕐</div>
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="info-content">
               <h4>Horaires d'Ouverture</h4>
               <p>Lundi - Samedi: 09:00 - 19:00<br>Dimanche: Sur rendez-vous</p>
@@ -4258,7 +4263,7 @@
           </div>
 
           <div class="info-item">
-            <div class="info-icon">💳</div>
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
             <div class="info-content">
               <h4>Paiement</h4>
               <p>Espèces, Cartes bancaires, Virements acceptés</p>
@@ -4266,7 +4271,7 @@
           </div>
 
           <div class="info-item">
-            <div class="info-icon">⏱️</div>
+            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></div>
             <div class="info-content">
               <h4>Politique d'Annulation</h4>
               <p>Annulation gratuite jusqu'à 24h avant le rendez-vous</p>

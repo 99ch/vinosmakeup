@@ -390,3 +390,17 @@ select {
   padding: 2rem 1rem;
   white-space: nowrap;
 }
+
+/* Textual brand labels replacing the former EVER SVG wordmarks */
+.everlogo.brand-text {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}

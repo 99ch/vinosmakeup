@@ -149,6 +149,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function () {
+  // Loader: only on pages that ship GSAP + CustomEase
+  if (!window.gsap || !window.CustomEase) {
+    return;
+  }
   var customEase =
     'M0,0,C0,0,0.13,0.34,0.238,0.442,0.305,0.506,0.322,0.514,0.396,0.54,0.478,0.568,0.468,0.56,0.522,0.584,0.572,0.606,0.61,0.719,0.714,0.826,0.798,0.912,1,1,1,1';
   var hasVisited = sessionStorage.getItem('visited') !== null;
@@ -189,6 +193,10 @@ window.addEventListener('load', function () {
 window.addEventListener('load', function () {
   var mainCarousel = '.tricks-slider';
   var mainSlides = '.tricks-slider_slide';
+  // Carousel: only on pages that ship Flickity and the slider markup
+  if (!window.Flickity || !document.querySelector(mainCarousel)) {
+    return;
+  }
   var parallaxAmount = 49;
   var verticalAmount = 60;
   var rotationAmount = 6;

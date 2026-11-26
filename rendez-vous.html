@@ -772,79 +772,58 @@
       </div>
 
   <main class="vm-main">
-        <section class="vm-hero">
-            <div class="vm-wrap vm-hero-inner">
+        <div class="vm-wrap">
+            <div class="vm-crumbs"><a href="index.html">Accueil</a><span>/</span>Rendez-vous</div>
+            <section class="vm-phead">
+                <h1>Rendez-vous</h1>
+                <p>Choisissez votre soin et votre créneau. Votre demande arrive directement sur notre WhatsApp.</p>
+            </section>
+            <section class="vm-layout">
                 <div>
-                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Rendez-vous</span></nav>
-                    <h1>Prendre rendez-vous</h1>
-                    <p class="vm-lead">Choisissez votre soin, votre créneau, et envoyez votre demande : elle arrive directement sur notre WhatsApp.</p>
-                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="#reservation">Remplir la demande</a><a class="vm-btn vm-btn-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp direct</a></div>
-                </div>
-                <div class="vm-hero-media"><img src="images/service-sourcils.webp" alt="Soin des sourcils chez VINO'S MAKEUP" width="1200" height="1000"></div>
-            </div>
-        </section>
-        <section class="vm-quick" aria-label="Informations pratiques">
-            <div class="vm-wrap">
-                <div class="vm-quick-grid">
-                    <a class="vm-quick-item" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>Adresse</small><strong>Cotonou – Minontin</strong></span></a>
-                    <div class="vm-quick-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Horaires</small><strong>Lun – Sam, 09:00 – 19:00</strong></span></div>
-                    <a class="vm-quick-item" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg><span><small>WhatsApp</small><strong>+229 01 60 20 81 77</strong></span></a>
-                </div>
-            </div>
-        </section>
-        <section class="vm-section is-white">
-            <div class="vm-wrap">
-                <div class="vm-steps">
-                    <div class="vm-step"><h3>Remplissez la demande</h3><p>Votre soin, le jour et l'heure qui vous arrangent, et votre numéro.</p></div>
-                    <div class="vm-step"><h3>Envoyez-la sur WhatsApp</h3><p>Un message déjà rédigé s'ouvre dans WhatsApp : il suffit de l'envoyer.</p></div>
-                    <div class="vm-step"><h3>Recevez notre confirmation</h3><p>Nous vous répondons pour valider le créneau ou vous proposer le plus proche.</p></div>
-                </div>
-            </div>
-        </section>
-        <section class="vm-section" id="reservation" style="scroll-margin-top:var(--vm-nav)">
-            <div class="vm-wrap vm-layout">
-                <div class="vm-card">
                     <h2>Votre demande</h2>
                     <p class="vm-sub">Les champs marqués d'une étoile sont nécessaires pour vous répondre.</p>
                     <form id="booking-form" class="vm-form">
-                        <div class="vm-row">
-                            <div class="vm-field"><label for="firstname">Prénom *</label><input id="firstname" name="firstname" type="text" autocomplete="given-name" required></div>
-                            <div class="vm-field"><label for="lastname">Nom *</label><input id="lastname" name="lastname" type="text" autocomplete="family-name" required></div>
+                        <div class="vm-two">
+                            <div class="vm-f"><label for="firstname">Prénom *</label><input id="firstname" name="firstname" type="text" autocomplete="given-name" required></div>
+                            <div class="vm-f"><label for="lastname">Nom *</label><input id="lastname" name="lastname" type="text" autocomplete="family-name" required></div>
                         </div>
-                        <div class="vm-field"><label for="phone">Téléphone / WhatsApp *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+229 …" required></div>
-                        <div class="vm-field"><label for="service">Soin souhaité *</label><select id="service" name="service" required><option value="">Sélectionnez un soin</option><option value="Cils">Cils</option><option value="Sourcils">Sourcils</option><option value="Ongles">Ongles</option><option value="Épilation">Épilation</option><option value="Maquillage durable">Maquillage durable</option><option value="Soins du corps">Soins du corps</option></select></div>
-                        <div class="vm-row">
-                            <div class="vm-field"><label for="date">Date souhaitée *</label><input id="date" name="date" type="date" required></div>
-                            <div class="vm-field"><label for="time">Heure souhaitée *</label><select id="time" name="time" required><option value="">Choisir une heure</option><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option></select></div>
+                        <div class="vm-f"><label for="phone">Téléphone / WhatsApp *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+229" required></div>
+                        <div class="vm-f"><label for="service">Soin souhaité *</label><select id="service" name="service" required><option value="">Choisir un soin</option><option value="Cils">Cils</option><option value="Sourcils">Sourcils</option><option value="Ongles">Ongles</option><option value="Épilation">Épilation</option><option value="Maquillage durable">Maquillage durable</option><option value="Soins du corps">Soins du corps</option></select></div>
+                        <div class="vm-two">
+                            <div class="vm-f"><label for="date">Date souhaitée *</label><input id="date" name="date" type="date" required></div>
+                            <div class="vm-f"><label for="time">Heure souhaitée *</label><select id="time" name="time" required><option value="">Choisir une heure</option><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option></select></div>
                         </div>
-                        <div class="vm-field"><label for="message">Précisions (facultatif)</label><textarea id="message" name="message" placeholder="Un style en tête, une question, une allergie à signaler…"></textarea></div>
-                        <button type="submit" class="vm-btn vm-btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> Envoyer ma demande sur WhatsApp</button>
-                        <p class="vm-note">Votre demande n'est pas encore une réservation : elle devient définitive quand nous vous confirmons le créneau.</p>
+                        <div class="vm-f"><label for="message">Précisions (facultatif)</label><textarea id="message" name="message"></textarea></div>
+                        <button class="vm-btn" type="submit">Envoyer ma demande sur WhatsApp</button>
+                        <p class="vm-note">Votre demande devient une réservation une fois le créneau confirmé par notre équipe.</p>
                     </form>
                     <div id="booking-sent" class="vm-sent" role="status" aria-live="polite"></div>
                 </div>
-                <aside class="vm-aside">
-                    <div class="vm-card is-accent">
-                        <h3>Plus rapide : WhatsApp</h3>
-                        <p>Écrivez-nous directement, nous répondons pour caler votre rendez-vous.</p>
-                        <a class="vm-btn vm-btn-light" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> +229 01 60 20 81 77</a>
+                <aside class="vm-side">
+                    <div class="vm-block">
+                        <h3>Comment ça marche</h3>
+                        <ol class="vm-steps">
+                            <li><span>1</span><div><b>Remplissez la demande</b>Soin, jour et heure souhaités.</div></li>
+                            <li><span>2</span><div><b>Envoyez-la sur WhatsApp</b>Le message est déjà rédigé.</div></li>
+                            <li><span>3</span><div><b>Recevez la confirmation</b>Nous validons ou proposons le créneau le plus proche.</div></li>
+                        </ol>
                     </div>
-                    <div class="vm-card">
+                    <div class="vm-block">
+                        <h3>Plus direct</h3>
+                        <p style="margin-bottom:16px">Écrivez-nous sur WhatsApp, nous répondons pour caler votre rendez-vous.</p>
+                        <a class="vm-btn is-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener">+229 01 60 20 81 77</a>
+                    </div>
+                    <div class="vm-block">
                         <h3>Horaires</h3>
-                        <ul class="vm-hours"><li><strong>Lundi – Samedi</strong><span>09:00 – 19:00</span></li><li><strong>Dimanche</strong><span>Sur rendez-vous</span></li></ul>
+                        <ul class="vm-hours"><li><b>Lundi – Samedi</b><span>09:00 – 19:00</span></li><li><b>Dimanche</b><span>Sur rendez-vous</span></li></ul>
                     </div>
-                    <div class="vm-card">
-                        <h3>Où nous trouver</h3>
-                        <p><strong>Cotonou – Minontin</strong><br>Bénin</p>
-                        <a class="vm-btn vm-btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Voir sur la carte</a>
-                    </div>
-                    <div class="vm-card">
-                        <h3>Nos soins</h3>
-                        <ul class="vm-links"><li><a href="services.html#cils">Cils</a></li><li><a href="services.html#sourcils">Sourcils</a></li><li><a href="services.html#ongles">Ongles</a></li><li><a href="services.html#epilation">Épilation</a></li><li><a href="services.html#maquillage">Maquillage durable</a></li><li><a href="services.html#corps">Soins du corps</a></li></ul>
+                    <div class="vm-block">
+                        <h3>Adresse</h3>
+                        <p>Cotonou – Minontin<br>Bénin</p>
                     </div>
                 </aside>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <!-- ==================== FOOTER (partagé depuis partials/footer.html) ==================== -->

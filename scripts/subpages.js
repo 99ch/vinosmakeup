@@ -1,9 +1,16 @@
 'use strict';
 
-// Scripts des sous-pages : réservation WhatsApp, formulaire de contact, sommaire des services.
+// Scripts des sous-pages : photos, galerie, réservation WhatsApp, formulaire de contact.
 (function () {
   var WHATSAPP = 'https://wa.me/2290160208177';
   var EMAIL = 'makeupvinos@gmail.com';
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
 
   function formatDate(value) {
     if (!value) return '';
@@ -11,10 +18,141 @@
     return parts[2] + '/' + parts[1] + '/' + parts[0];
   }
 
-  function showSent(el, html) {
-    el.innerHTML = html;
-    el.classList.add('is-visible');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  function showSent(node, html) {
+    node.innerHTML = html;
+    node.classList.add('is-visible');
+    node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // --- Emplacements photo : la photo apparaît dès que le fichier existe ---
+  document.querySelectorAll('[data-photo]').forEach(function (box) {
+    var img = new Image();
+    img.onload = function () {
+      img.alt = box.getAttribute('data-alt') || '';
+      img.loading = 'lazy';
+      box.textContent = '';
+      box.appendChild(img);
+    };
+    img.src = box.getAttribute('data-photo');
+  });
+
+  // --- Galerie : les photos viennent de scripts/gallery-data.js ---
+  var grid = document.getElementById('gallery-grid');
+  if (grid) {
+    var CATEGORIES = [
+      ['cils', 'Cils'],
+      ['sourcils', 'Sourcils'],
+      ['ongles', 'Ongles'],
+      ['epilation', 'Épilation'],
+      ['maquillage', 'Maquillage durable'],
+      ['corps', 'Soins du corps']
+    ];
+    var labels = {};
+    CATEGORIES.forEach(function (c) { labels[c[0]] = c[1]; });
+
+    var items = Array.isArray(window.VM_GALLERY) ? window.VM_GALLERY.slice() : [];
+    var preview = items.length === 0;
+    if (preview) {
+      var heights = [440, 300, 380, 320, 460, 300, 380, 340, 420];
+      items = heights.map(function (h, i) {
+        return { cat: CATEGORIES[i % CATEGORIES.length][0], title: 'Photo à ajouter', height: h };
+      });
+    }
+
+    var tabs = document.getElementById('gallery-tabs');
+    var tiles = [];
+    var visible = [];
+    var current = 0;
+
+    var lightbox = document.getElementById('gallery-lightbox');
+    var lbImg = lightbox.querySelector('img');
+    var lbCap = lightbox.querySelector('figcaption');
+
+    function show(index) {
+      current = (index + visible.length) % visible.length;
+      var item = visible[current];
+      lbImg.src = item.src;
+      lbImg.alt = item.title || '';
+      lbCap.textContent = (item.title ? item.title + ' · ' : '') + (labels[item.cat] || '');
+    }
+    function open(item) {
+      visible = items.filter(function (it) { return it.src && tiles[items.indexOf(it)] && !tiles[items.indexOf(it)].hidden; });
+      show(visible.indexOf(item));
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    items.forEach(function (item) {
+      var fig = el('figure', 'vm-tile');
+      var media;
+      if (item.src) {
+        var btn = el('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Agrandir : ' + (item.title || labels[item.cat]));
+        var img = new Image();
+        img.src = item.src;
+        img.alt = item.title || '';
+        img.loading = 'lazy';
+        btn.appendChild(img);
+        btn.addEventListener('click', function () { open(item); });
+        media = btn;
+      } else {
+        media = el('div', 'vm-media');
+        media.style.height = item.height + 'px';
+        media.appendChild(el('div', 'vm-ph', 'Photo à ajouter'));
+      }
+      fig.appendChild(media);
+      var cap = el('figcaption');
+      cap.appendChild(el('b', '', item.title || ''));
+      cap.firstChild.style.fontWeight = '400';
+      cap.appendChild(el('span', '', labels[item.cat] || ''));
+      fig.appendChild(cap);
+      grid.appendChild(fig);
+      tiles.push(fig);
+    });
+
+    var used = {};
+    items.forEach(function (it) { used[it.cat] = true; });
+    var buttons = [];
+    function addTab(key, label) {
+      var b = el('button', '', label);
+      b.type = 'button';
+      b.addEventListener('click', function () {
+        buttons.forEach(function (x) { x.classList.remove('is-on'); });
+        b.classList.add('is-on');
+        items.forEach(function (it, i) { tiles[i].hidden = key !== 'all' && it.cat !== key; });
+      });
+      tabs.appendChild(b);
+      buttons.push(b);
+      return b;
+    }
+    var all = addTab('all', 'Tous');
+    all.classList.add('is-on');
+    CATEGORIES.forEach(function (c) {
+      if (used[c[0]]) addTab(c[0], c[1]);
+    });
+
+    var wanted = new URLSearchParams(window.location.search).get('cat');
+    CATEGORIES.forEach(function (c, i) {
+      if (c[0] === wanted && used[c[0]]) {
+        buttons.filter(function (b) { return b.textContent === c[1]; }).forEach(function (b) { b.click(); });
+      }
+    });
+
+    lightbox.querySelector('.is-close').addEventListener('click', close);
+    lightbox.querySelector('.is-prev').addEventListener('click', function () { show(current - 1); });
+    lightbox.querySelector('.is-next').addEventListener('click', function () { show(current + 1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
   }
 
   // --- Rendez-vous : la demande part sur WhatsApp, déjà rédigée ---
@@ -73,30 +211,6 @@
         '<strong>Votre messagerie s’ouvre avec le message prêt.</strong> Il ne reste qu’à l’envoyer. ' +
           'Vous pouvez aussi nous écrire sur <a href="' + WHATSAPP + '" target="_blank" rel="noopener">WhatsApp</a>.'
       );
-    });
-  }
-
-  // --- Services : le sommaire suit la section visible ---
-  var chips = document.querySelectorAll('.vm-chip[href^="#"]');
-  if (chips.length && 'IntersectionObserver' in window) {
-    var byId = {};
-    chips.forEach(function (chip) {
-      byId[chip.getAttribute('href').slice(1)] = chip;
-    });
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          chips.forEach(function (c) { c.classList.remove('is-active'); });
-          byId[entry.target.id].classList.add('is-active');
-          byId[entry.target.id].scrollIntoView({ block: 'nearest', inline: 'center' });
-        });
-      },
-      { rootMargin: '-40% 0px -50% 0px' }
-    );
-    Object.keys(byId).forEach(function (id) {
-      var section = document.getElementById(id);
-      if (section) observer.observe(section);
     });
   }
 })();

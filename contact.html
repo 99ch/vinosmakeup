@@ -23,6 +23,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="styles/webflow.css" rel="stylesheet" type="text/css">
   <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/pages.css" rel="stylesheet" type="text/css">
   <link
     href="images/logo1.png"
     rel="shortcut icon" type="image/x-icon">
@@ -44,358 +45,7 @@
       --color--button-background: var(--dark--button-background);
       --color--button-text: var(--dark--button-text);
     }
-
-    /* Contact Page Styles */
-    .contact-hero {
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #F5F1ED 0%, #E8E0D5 100%);
-      padding: 120px 2rem 3rem;
-      text-align: center;
-    }
-
-    .contact-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      color: #8B7355;
-      margin-bottom: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
-
-    .contact-hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: #A89080;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .contact-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    .contact-form-wrapper {
-      background: white;
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-form h2 {
-      font-size: 2rem;
-      color: #8B7355;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .contact-form p {
-      color: #666;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 1rem;
-      color: #8B7355;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .form-input,
-    .form-select,
-    .form-textarea {
-      width: 100%;
-      padding: 0.875rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #E8E0D5;
-      border-radius: 8px;
-      background: white;
-      color: #333;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
-      outline: none;
-      border-color: #8B7355;
-      box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
-    }
-
-    .form-textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 1.125rem 2rem;
-      background: #8B7355;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .submit-button:hover {
-      background: #A89080;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(139, 115, 85, 0.3);
-    }
-
-    .submit-button:active {
-      transform: translateY(0);
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .info-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .info-card-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .info-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #8B7355 0%, #A89080 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .info-card h3 {
-      font-size: 1.3rem;
-      color: #8B7355;
-      margin: 0;
-      font-weight: 400;
-    }
-
-    .info-card p {
-      color: #666;
-      line-height: 1.7;
-      margin: 0.5rem 0 0 0;
-      font-size: 1rem;
-    }
-
-    .info-card a {
-      color: #8B7355;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .info-card a:hover {
-      color: #A89080;
-      text-decoration: underline;
-    }
-
-    .locations-section {
-      background: #FAFAF8;
-      padding: 4rem 2rem;
-      border-radius: 12px;
-      margin-top: 3rem;
-    }
-
-    .locations-section h2 {
-      font-size: 2.5rem;
-      color: #8B7355;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-weight: 300;
-    }
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .location-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-
-    .location-card h3 {
-      font-size: 2rem;
-      color: #8B7355;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .location-details {
-      text-align: left;
-      margin-top: 1.5rem;
-    }
-
-    .location-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .location-item:hover {
-      background: #F5F1ED;
-    }
-
-    .location-item-icon {
-      font-size: 1.25rem;
-      color: #8B7355;
-      flex-shrink: 0;
-      margin-top: 0.25rem;
-    }
-
-    .location-item-text {
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 3rem;
-      padding-top: 3rem;
-      border-top: 1px solid #E8E0D5;
-    }
-
-    .social-link {
-      width: 50px;
-      height: 50px;
-      background: white;
-      border: 2px solid #8B7355;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: #8B7355;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      background: #8B7355;
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
-    }
-
-    .success-message {
-      display: none;
-      background: #E8F5E9;
-      border: 2px solid #4CAF50;
-      color: #2E7D32;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .success-message.show {
-      display: block;
-    }
-
-    .success-message h4 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.2rem;
-    }
-
-    .success-message p {
-      margin: 0;
-    }
-
-    @media (max-width: 968px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form-wrapper {
-        padding: 2rem;
-      }
-
-      .locations-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-hero {
-        padding: 100px 1.5rem 2rem;
-      }
-
-      .contact-container {
-        padding: 2rem 1.5rem;
-      }
-
-      .contact-form-wrapper {
-        padding: 1.5rem;
-      }
-
-      .info-card {
-        padding: 1.5rem;
-      }
-
-      .location-card {
-        padding: 1.5rem;
-      }
-
-      .locations-section {
-        padding: 2rem 1.5rem;
-      }
-    }
-  </style>
+    </style>
 </head>
 
 <body style="--color--button-text: white; --color--button-background: #7a6047; --color--text: #7a6047; --color--background: #f9f6f1;">
@@ -1121,165 +771,67 @@
         <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="contact-hero">
-      <div>
-        <h1>Contactez-Nous</h1>
-        <p>Nous sommes à votre écoute pour répondre à toutes vos questions</p>
-      </div>
-    </section>
-
-    <div class="contact-container">
-      <!-- Contact Grid -->
-      <div class="contact-grid">
-        <!-- Contact Form -->
-        <div class="contact-form-wrapper">
-          <h2>Envoyez-nous un Message</h2>
-          <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
-
-          <div class="success-message" id="success-message">
-            <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:0.5rem"><polyline points="20 6 9 17 4 12"/></svg>Message Envoyé !</h4>
-            <p>Merci pour votre message. Notre équipe vous répondra sous 24-48 heures.</p>
-          </div>
-
-          <form id="contact-form" class="contact-form">
-            <div class="form-group">
-              <label for="name" class="form-label">Nom complet *</label>
-              <input type="text" id="name" name="name" class="form-input" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="form-label">Email *</label>
-              <input type="email" id="email" name="email" class="form-input" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="form-label">Téléphone</label>
-              <input type="tel" id="phone" name="phone" class="form-input">
-            </div>
-
-            <div class="form-group">
-              <label for="subject" class="form-label">Sujet *</label>
-              <input type="text" id="subject" name="subject" class="form-input" required>
-            </div>
-
-            <div class="form-group">
-              <label for="message" class="form-label">Message *</label>
-              <textarea id="message" name="message" class="form-textarea" required></textarea>
-            </div>
-
-            <button type="submit" class="submit-button">Envoyer le Message</button>
-          </form>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <div class="info-card">
-            <div class="info-card-header">
-              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <h3>Email</h3>
-            </div>
-            <p>
-              <a href="mailto:makeupvinos@gmail.com">makeupvinos@gmail.com</a><br>
-              <a href="mailto:makeupvinos@gmail.com">makeupvinos@gmail.com</a>
-            </p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-header">
-              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-              <h3>Téléphone</h3>
-            </div>
-            <p>
-              Téléphone: <a href="tel:+2290160208177">+229 01 60 20 81 77</a><br>
-              WhatsApp: <a href="https://wa.me/2290160208177">+229 01 60 20 81 77</a>
-            </p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-header">
-              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <h3>Horaires d'Ouverture</h3>
-            </div>
-            <p>
-              <strong>Lundi - Samedi</strong><br>
-              09:00 - 19:00<br><br>
-              <strong>Dimanche</strong><br>
-              Sur rendez-vous uniquement
-            </p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card-header">
-              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-              <h3>Réseaux Sociaux</h3>
-            </div>
-            <p>
-              Suivez-nous sur Instagram, Facebook et TikTok pour découvrir nos dernières réalisations et offres
-              exclusives !
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Locations Section -->
-      <div class="locations-section">
-        <h2>Nos Emplacements</h2>
-        <div class="locations-grid">
-          <!-- Cotonou -->
-          <div class="location-card">
-            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:0.5rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cotonou - Minontin</h3>
-            <div class="location-details">
-              <div class="location-item">
-                <div class="location-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="7" x2="10" y2="7"/><line x1="9" y1="11" x2="10" y2="11"/><line x1="9" y1="15" x2="10" y2="15"/><line x1="14" y1="7" x2="15" y2="7"/><line x1="14" y1="11" x2="15" y2="11"/><line x1="14" y1="15" x2="15" y2="15"/></svg></div>
-                <div class="location-item-text">
-                  <strong>Adresse:</strong><br>
-                  Minontin<br>
-                  Cotonou<br>
-                  Bénin
+  <main class="vm-main">
+        <section class="vm-hero">
+            <div class="vm-wrap vm-hero-inner">
+                <div>
+                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Contact</span></nav>
+                    <h1>Contactez-nous</h1>
+                    <p class="vm-lead">Une question, un conseil, une envie de soin ? Nous sommes à votre écoute du lundi au samedi.</p>
+                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="rendez-vous.html">Prendre rendez-vous</a><a class="vm-btn vm-btn-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp</a></div>
                 </div>
-              </div>
-              <div class="location-item">
-                <div class="location-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                <div class="location-item-text">
-                  <strong>Téléphone:</strong><br>
-                  <a href="tel:+2290160208177">+229 01 60 20 81 77</a>
-                </div>
-              </div>
-              <div class="location-item">
-                <div class="location-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-                <div class="location-item-text">
-                  <strong>Email:</strong><br>
-                  <a href="mailto:makeupvinos@gmail.com">makeupvinos@gmail.com</a>
-                </div>
-              </div>
+                <div class="vm-hero-media"><img src="images/service-corps.webp" alt="Massage du dos chez VINO'S MAKEUP" width="1200" height="1000"></div>
             </div>
-          </div>
-        </div>
-
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://instagram.com/vinosmakeup" target="_blank" rel="noopener" class="social-link"
-            aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://facebook.com/vinosmakeup" target="_blank" rel="noopener" class="social-link"
-            aria-label="Facebook">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-          </a>
-          <a href="https://wa.me/2290160208177" target="_blank" rel="noopener" class="social-link"
-            aria-label="WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          </a>
-          <a href="https://tiktok.com/@vinosmakeup" target="_blank" rel="noopener" class="social-link"
-            aria-label="TikTok">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
+        </section>
+        <section class="vm-section" style="padding-bottom:2rem">
+            <div class="vm-wrap">
+                <div class="vm-contact-cards">
+                    <a class="vm-contact-card" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><span class="vm-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg></span><h3>WhatsApp</h3><p>+229 01 60 20 81 77<br>Réponse la plus rapide</p></a>
+                    <a class="vm-contact-card" href="tel:+2290160208177"><span class="vm-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><h3>Téléphone</h3><p>+229 01 60 20 81 77<br>Lun – Sam, 09:00 – 19:00</p></a>
+                    <a class="vm-contact-card" href="mailto:makeupvinos@gmail.com"><span class="vm-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><h3>E-mail</h3><p>makeupvinos@gmail.com</p></a>
+                    <a class="vm-contact-card" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><span class="vm-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Adresse</h3><p>Cotonou – Minontin<br>Voir sur la carte</p></a>
+                </div>
+            </div>
+        </section>
+        <section class="vm-section">
+            <div class="vm-wrap vm-layout">
+                <div class="vm-card">
+                    <h2>Envoyez-nous un message</h2>
+                    <p class="vm-sub">Votre messagerie s'ouvrira avec le message prêt à partir.</p>
+                    <form id="contact-form" class="vm-form">
+                        <div class="vm-row">
+                            <div class="vm-field"><label for="name">Nom complet *</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+                            <div class="vm-field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+                        </div>
+                        <div class="vm-field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+                        <div class="vm-field"><label for="subject">Sujet *</label><input id="subject" name="subject" type="text" required></div>
+                        <div class="vm-field"><label for="message">Message *</label><textarea id="message" name="message" required></textarea></div>
+                        <button type="submit" class="vm-btn vm-btn-primary">Envoyer le message</button>
+                    </form>
+                    <div id="contact-sent" class="vm-sent" role="status" aria-live="polite"></div>
+                </div>
+                <aside class="vm-aside">
+                    <div class="vm-card">
+                        <h3>Horaires d'ouverture</h3>
+                        <ul class="vm-hours"><li><strong>Lundi – Samedi</strong><span>09:00 – 19:00</span></li><li><strong>Dimanche</strong><span>Sur rendez-vous</span></li></ul>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Suivez-nous</h3>
+                        <ul class="vm-links">
+                            <li><a href="https://www.instagram.com/vinosmakeup/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/vinosMakeup/" target="_blank" rel="noopener">Facebook</a></li>
+                            <li><a href="https://www.tiktok.com/@vinosmakeup" target="_blank" rel="noopener">TikTok</a></li>
+                        </ul>
+                    </div>
+                    <div class="vm-card is-accent">
+                        <h3>Envie de réserver ?</h3>
+                        <p>Choisissez votre soin et votre créneau en quelques clics.</p>
+                        <a class="vm-btn vm-btn-light" href="rendez-vous.html">Prendre rendez-vous</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER (partagé depuis partials/footer.html) ==================== -->
     <div class="background-wooden">
@@ -1355,34 +907,7 @@
   <script src="scripts/vendor/ScrollTrigger-3.12.4.min.js"></script>
   <script defer src="scripts/main.js"></script>
 
-  <script>
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Collect form data
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
-
-      // In a real application, you would send this data to your server
-      console.log('Contact form data:', data);
-
-      // Show success message
-      successMessage.classList.add('show');
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Reset form
-      contactForm.reset();
-
-      // Hide success message after 8 seconds
-      setTimeout(() => {
-        successMessage.classList.remove('show');
-      }, 8000);
-    });
-  </script>
+  <script src="scripts/subpages.js" defer></script>
 </body>
 
 </html>

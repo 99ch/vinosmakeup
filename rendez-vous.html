@@ -23,6 +23,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="styles/webflow.css" rel="stylesheet" type="text/css">
   <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/pages.css" rel="stylesheet" type="text/css">
   <link
     href="images/logo1.png"
     rel="shortcut icon" type="image/x-icon">
@@ -44,279 +45,7 @@
       --color--button-background: var(--dark--button-background);
       --color--button-text: var(--dark--button-text);
     }
-
-    /* Booking Page Styles */
-    .booking-hero {
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #F5F1ED 0%, #E8E0D5 100%);
-      padding: 120px 2rem 3rem;
-      text-align: center;
-    }
-
-    .booking-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      color: #8B7355;
-      margin-bottom: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
-
-    .booking-hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: #A89080;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .booking-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 3rem;
-    }
-
-    .booking-form-wrapper {
-      background: white;
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .booking-form h2 {
-      font-size: 2rem;
-      color: #8B7355;
-      margin-bottom: 2rem;
-      font-weight: 400;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 1rem;
-      color: #8B7355;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .form-input,
-    .form-select,
-    .form-textarea {
-      width: 100%;
-      padding: 0.875rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #E8E0D5;
-      border-radius: 8px;
-      background: white;
-      color: #333;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
-      outline: none;
-      border-color: #8B7355;
-      box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
-    }
-
-    .form-select {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238B7355' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 3rem;
-    }
-
-    .form-textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 1.125rem 2rem;
-      background: #8B7355;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .submit-button:hover {
-      background: #A89080;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(139, 115, 85, 0.3);
-    }
-
-    .submit-button:active {
-      transform: translateY(0);
-    }
-
-    .booking-sidebar {
-      position: sticky;
-      top: 100px;
-      height: fit-content;
-    }
-
-    .info-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      margin-bottom: 1.5rem;
-    }
-
-    .info-card h3 {
-      font-size: 1.4rem;
-      color: #8B7355;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid #F5F1ED;
-    }
-
-    .info-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .info-icon {
-      font-size: 1.5rem;
-      color: #8B7355;
-      flex-shrink: 0;
-    }
-
-    .info-content h4 {
-      font-size: 1rem;
-      color: #8B7355;
-      margin-bottom: 0.25rem;
-      font-weight: 500;
-    }
-
-    .info-content p {
-      font-size: 0.95rem;
-      color: #666;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .services-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .services-list li {
-      padding: 0.75rem 0;
-      color: #666;
-      font-size: 0.95rem;
-      border-bottom: 1px solid #F5F1ED;
-    }
-
-    .services-list li:last-child {
-      border-bottom: none;
-    }
-
-    .services-list li::before {
-      content: '';
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.75rem;
-      vertical-align: -2px;
-      background-color: #8B7355;
-      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
-              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
-    }
-
-    .success-message {
-      display: none;
-      background: #E8F5E9;
-      border: 2px solid #4CAF50;
-      color: #2E7D32;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .success-message.show {
-      display: block;
-    }
-
-    .success-message h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #2E7D32;
-    }
-
-    .success-message p {
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    @media (max-width: 968px) {
-      .booking-container {
-        grid-template-columns: 1fr;
-        padding: 2rem 1.5rem;
-      }
-
-      .booking-form-wrapper {
-        padding: 2rem;
-      }
-
-      .booking-sidebar {
-        position: static;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .booking-hero {
-        padding: 100px 1.5rem 2rem;
-      }
-
-      .booking-form-wrapper {
-        padding: 1.5rem;
-      }
-
-      .info-card {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    </style>
 </head>
 
 <body style="--color--button-text: white; --color--button-background: #7a6047; --color--text: #7a6047; --color--background: #f9f6f1;">
@@ -1042,154 +771,81 @@
         <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
 
-  <main>
-    <section class="booking-hero">
-      <div>
-        <h1>Réservez Votre Rendez-vous</h1>
-        <p>Choisissez votre service préféré et laissez-nous prendre soin de vous</p>
-      </div>
-    </section>
-
-    <div class="booking-container">
-      <!-- Booking Form -->
-      <div class="booking-form-wrapper">
-        <h2>Informations de Réservation</h2>
-
-        <div class="success-message" id="success-message">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:0.5rem"><polyline points="20 6 9 17 4 12"/></svg>Réservation Confirmée !</h3>
-          <p>Merci ! Nous avons bien reçu votre demande de rendez-vous. Notre équipe vous contactera sous 24h pour
-            confirmer votre réservation.</p>
-        </div>
-
-        <form id="booking-form" class="booking-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName" class="form-label">Prénom *</label>
-              <input type="text" id="firstName" name="firstName" class="form-input" required>
+  <main class="vm-main">
+        <section class="vm-hero">
+            <div class="vm-wrap vm-hero-inner">
+                <div>
+                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Rendez-vous</span></nav>
+                    <h1>Prendre rendez-vous</h1>
+                    <p class="vm-lead">Choisissez votre soin, votre créneau, et envoyez votre demande : elle arrive directement sur notre WhatsApp.</p>
+                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="#reservation">Remplir la demande</a><a class="vm-btn vm-btn-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp direct</a></div>
+                </div>
+                <div class="vm-hero-media"><img src="images/service-sourcils.webp" alt="Soin des sourcils chez VINO'S MAKEUP" width="1200" height="1000"></div>
             </div>
-            <div class="form-group">
-              <label for="lastName" class="form-label">Nom *</label>
-              <input type="text" id="lastName" name="lastName" class="form-input" required>
+        </section>
+        <section class="vm-quick" aria-label="Informations pratiques">
+            <div class="vm-wrap">
+                <div class="vm-quick-grid">
+                    <a class="vm-quick-item" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>Adresse</small><strong>Cotonou – Minontin</strong></span></a>
+                    <div class="vm-quick-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Horaires</small><strong>Lun – Sam, 09:00 – 19:00</strong></span></div>
+                    <a class="vm-quick-item" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg><span><small>WhatsApp</small><strong>+229 01 60 20 81 77</strong></span></a>
+                </div>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email" class="form-label">Email *</label>
-              <input type="email" id="email" name="email" class="form-input" required>
+        </section>
+        <section class="vm-section is-white">
+            <div class="vm-wrap">
+                <div class="vm-steps">
+                    <div class="vm-step"><h3>Remplissez la demande</h3><p>Votre soin, le jour et l'heure qui vous arrangent, et votre numéro.</p></div>
+                    <div class="vm-step"><h3>Envoyez-la sur WhatsApp</h3><p>Un message déjà rédigé s'ouvre dans WhatsApp : il suffit de l'envoyer.</p></div>
+                    <div class="vm-step"><h3>Recevez notre confirmation</h3><p>Nous vous répondons pour valider le créneau ou vous proposer le plus proche.</p></div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="phone" class="form-label">Téléphone *</label>
-              <input type="tel" id="phone" name="phone" class="form-input" required>
+        </section>
+        <section class="vm-section" id="reservation" style="scroll-margin-top:var(--vm-nav)">
+            <div class="vm-wrap vm-layout">
+                <div class="vm-card">
+                    <h2>Votre demande</h2>
+                    <p class="vm-sub">Les champs marqués d'une étoile sont nécessaires pour vous répondre.</p>
+                    <form id="booking-form" class="vm-form">
+                        <div class="vm-row">
+                            <div class="vm-field"><label for="firstname">Prénom *</label><input id="firstname" name="firstname" type="text" autocomplete="given-name" required></div>
+                            <div class="vm-field"><label for="lastname">Nom *</label><input id="lastname" name="lastname" type="text" autocomplete="family-name" required></div>
+                        </div>
+                        <div class="vm-field"><label for="phone">Téléphone / WhatsApp *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+229 …" required></div>
+                        <div class="vm-field"><label for="service">Soin souhaité *</label><select id="service" name="service" required><option value="">Sélectionnez un soin</option><option value="Cils">Cils</option><option value="Sourcils">Sourcils</option><option value="Ongles">Ongles</option><option value="Épilation">Épilation</option><option value="Maquillage durable">Maquillage durable</option><option value="Soins du corps">Soins du corps</option></select></div>
+                        <div class="vm-row">
+                            <div class="vm-field"><label for="date">Date souhaitée *</label><input id="date" name="date" type="date" required></div>
+                            <div class="vm-field"><label for="time">Heure souhaitée *</label><select id="time" name="time" required><option value="">Choisir une heure</option><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option></select></div>
+                        </div>
+                        <div class="vm-field"><label for="message">Précisions (facultatif)</label><textarea id="message" name="message" placeholder="Un style en tête, une question, une allergie à signaler…"></textarea></div>
+                        <button type="submit" class="vm-btn vm-btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> Envoyer ma demande sur WhatsApp</button>
+                        <p class="vm-note">Votre demande n'est pas encore une réservation : elle devient définitive quand nous vous confirmons le créneau.</p>
+                    </form>
+                    <div id="booking-sent" class="vm-sent" role="status" aria-live="polite"></div>
+                </div>
+                <aside class="vm-aside">
+                    <div class="vm-card is-accent">
+                        <h3>Plus rapide : WhatsApp</h3>
+                        <p>Écrivez-nous directement, nous répondons pour caler votre rendez-vous.</p>
+                        <a class="vm-btn vm-btn-light" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> +229 01 60 20 81 77</a>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Horaires</h3>
+                        <ul class="vm-hours"><li><strong>Lundi – Samedi</strong><span>09:00 – 19:00</span></li><li><strong>Dimanche</strong><span>Sur rendez-vous</span></li></ul>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Où nous trouver</h3>
+                        <p><strong>Cotonou – Minontin</strong><br>Bénin</p>
+                        <a class="vm-btn vm-btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Voir sur la carte</a>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Nos soins</h3>
+                        <ul class="vm-links"><li><a href="services.html#cils">Cils</a></li><li><a href="services.html#sourcils">Sourcils</a></li><li><a href="services.html#ongles">Ongles</a></li><li><a href="services.html#epilation">Épilation</a></li><li><a href="services.html#maquillage">Maquillage durable</a></li><li><a href="services.html#corps">Soins du corps</a></li></ul>
+                    </div>
+                </aside>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="service" class="form-label">Service souhaité *</label>
-            <select id="service" name="service" class="form-select" required>
-              <option value="">Sélectionnez un service</option>
-              <option value="lash">Extensions de cils</option>
-              <option value="brow">Sourcils</option>
-              <option value="nails">Ongles</option>
-              <option value="wax">Épilation</option>
-              <option value="spmu">Maquillage durable</option>
-              <option value="body">Soins du corps</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="date" class="form-label">Date souhaitée *</label>
-              <input type="date" id="date" name="date" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label for="time" class="form-label">Heure souhaitée *</label>
-              <select id="time" name="time" class="form-select" required>
-                <option value="">Sélectionnez une heure</option>
-                <option value="09:00">09:00</option>
-                <option value="10:00">10:00</option>
-                <option value="11:00">11:00</option>
-                <option value="12:00">12:00</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="15:00">15:00</option>
-                <option value="16:00">16:00</option>
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="location" class="form-label">Emplacement préféré *</label>
-            <select id="location" name="location" class="form-select" required>
-              <option value="">Sélectionnez un emplacement</option>
-              <option value="cotonou-minontin">Cotonou - Minontin</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message" class="form-label">Message ou demandes spéciales (optionnel)</label>
-            <textarea id="message" name="message" class="form-textarea"
-              placeholder="Parlez-nous de vos attentes ou de toute demande particulière..."></textarea>
-          </div>
-
-          <button type="submit" class="submit-button">Confirmer le Rendez-vous</button>
-        </form>
-      </div>
-
-      <!-- Sidebar -->
-      <aside class="booking-sidebar">
-        <div class="info-card">
-          <h3>Informations Pratiques</h3>
-
-          <div class="info-item">
-            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div class="info-content">
-              <h4>Nos Emplacements</h4>
-              <p>Minontin, Cotonou (Bénin)<br>Adresse précise communiquée après réservation</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div class="info-content">
-              <h4>Horaires d'Ouverture</h4>
-              <p>Lundi - Samedi: 09:00 - 19:00<br>Dimanche: Sur rendez-vous</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-            <div class="info-content">
-              <h4>Paiement</h4>
-              <p>Espèces, Cartes bancaires, Virements acceptés</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></div>
-            <div class="info-content">
-              <h4>Politique d'Annulation</h4>
-              <p>Annulation gratuite jusqu'à 24h avant le rendez-vous</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <h3>Nos Services</h3>
-          <ul class="services-list">
-            <li>Extensions de Cils</li>
-            <li>Sourcils (Microblading, Lamination)</li>
-            <li>Nail Art & Manucure</li>
-            <li>Épilation Professionnelle</li>
-            <li>Maquillage Durable</li>
-            <li>Massages & Soins du Corps</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  </main>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER (partagé depuis partials/footer.html) ==================== -->
     <div class="background-wooden">
@@ -1265,48 +921,7 @@
   <script src="scripts/vendor/ScrollTrigger-3.12.4.min.js"></script>
   <script defer src="scripts/main.js"></script>
 
-  <script>
-    // Set minimum date to today
-    const dateInput = document.getElementById('date');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-
-    // Form submission handling
-    const bookingForm = document.getElementById('booking-form');
-    const successMessage = document.getElementById('success-message');
-
-    bookingForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Collect form data
-      const formData = new FormData(bookingForm);
-      const data = Object.fromEntries(formData);
-
-      // In a real application, you would send this data to your server
-      console.log('Booking data:', data);
-
-      // Show success message
-      bookingForm.style.display = 'none';
-      successMessage.classList.add('show');
-
-      // Scroll to success message
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Optional: Reset form after 5 seconds and show it again
-      setTimeout(() => {
-        bookingForm.reset();
-        bookingForm.style.display = 'block';
-        successMessage.classList.remove('show');
-      }, 10000);
-    });
-
-    // Service selection helper
-    const serviceSelect = document.getElementById('service');
-    serviceSelect.addEventListener('change', function () {
-      // You could add logic here to show service-specific information
-      console.log('Selected service:', this.value);
-    });
-  </script>
+  <script src="scripts/subpages.js" defer></script>
 </body>
 
 </html>

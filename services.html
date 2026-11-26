@@ -23,6 +23,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="styles/webflow.css" rel="stylesheet" type="text/css">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/pages.css" rel="stylesheet" type="text/css">
     <link
         href="images/logo1.png"
         rel="shortcut icon" type="image/x-icon">
@@ -43,149 +44,6 @@
             --color--text: var(--dark--text);
             --color--button-background: var(--dark--button-background);
             --color--button-text: var(--dark--button-text);
-        }
-
-        /* Services Page Styles */
-        .services-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #F5F1ED 0%, #E8E0D5 100%);
-            padding: 120px 2rem 4rem;
-            text-align: center;
-        }
-
-        .services-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: #8B7355;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        .services-hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: #A89080;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .services-grid {
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 3rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            min-height: 400px;
-        }
-
-        .service-card:nth-child(even) {
-            direction: rtl;
-        }
-
-        .service-card:nth-child(even)>* {
-            direction: ltr;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 400px;
-        }
-
-        .service-content {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .service-logo {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-title {
-            font-size: 2rem;
-            color: #8B7355;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .service-description {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .service-cta {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            background: #8B7355;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            align-self: flex-start;
-        }
-
-        .service-cta:hover {
-            background: #A89080;
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 968px) {
-            .service-card {
-                grid-template-columns: 1fr;
-                direction: ltr !important;
-            }
-
-            .service-card:nth-child(even) {
-                direction: ltr;
-            }
-
-            .service-content {
-                padding: 2rem;
-            }
-
-            .service-image {
-                min-height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-hero {
-                padding: 100px 1.5rem 3rem;
-            }
-
-            .service-content {
-                padding: 1.5rem;
-            }
-
-            .service-logo {
-                max-width: 200px;
-            }
         }
     </style>
 </head>
@@ -913,103 +771,119 @@
         <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
 
-    <main>
-        <section class="services-hero">
-            <div>
-                <h1>Nos Services</h1>
-                <p>Découvrez notre gamme complète de soins professionnels conçus pour sublimer votre beauté naturelle
-                </p>
+    <main class="vm-main">
+        <section class="vm-hero">
+            <div class="vm-wrap vm-hero-inner">
+                <div>
+                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Services</span></nav>
+                    <h1>Nos services</h1>
+                    <p class="vm-lead">Six univers de soins pour sublimer votre beauté naturelle, du regard aux ongles, de la peau au bien-être.</p>
+                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="rendez-vous.html">Prendre rendez-vous</a><a class="vm-btn vm-btn-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp</a></div>
+                </div>
+                <div class="vm-hero-media"><img src="images/service-cils.webp" alt="Pose de cils chez VINO'S MAKEUP" width="1200" height="1000"></div>
             </div>
         </section>
-
-        <section class="services-grid">
-            <!-- Cils -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-cils.webp"
-                        alt="Extensions de cils" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Cils</h2>
-                    <p class="service-description">Sublimez votre regard avec nos extensions de cils professionnelles.
-                        Du volume classique au mega volume, nos techniques expertes vous garantissent un résultat
-                        naturel et durable. Chaque cil est appliqué avec précision pour créer l'effet parfait.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
+        <section class="vm-quick" aria-label="Informations pratiques">
+            <div class="vm-wrap">
+                <div class="vm-quick-grid">
+                    <a class="vm-quick-item" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>Adresse</small><strong>Cotonou – Minontin</strong></span></a>
+                    <div class="vm-quick-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Horaires</small><strong>Lun – Sam, 09:00 – 19:00</strong></span></div>
+                    <a class="vm-quick-item" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg><span><small>WhatsApp</small><strong>+229 01 60 20 81 77</strong></span></a>
                 </div>
             </div>
-
-            <!-- Sourcils -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-sourcils.webp"
-                        alt="Sourcils parfaits" class="service-image">
+        </section>
+        <div class="vm-chips-bar" style="margin-top:3rem"><nav class="vm-chips" aria-label="Catégories de soins"><a class="vm-chip" href="#cils">Cils</a><a class="vm-chip" href="#sourcils">Sourcils</a><a class="vm-chip" href="#ongles">Ongles</a><a class="vm-chip" href="#epilation">Épilation</a><a class="vm-chip" href="#maquillage">Maquillage durable</a><a class="vm-chip" href="#corps">Soins du corps</a></nav></div>
+        <section class="vm-section" style="padding-top:2rem">
+            <article class="vm-svc" id="cils">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-cils.webp" alt="Cils" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">01 / 06</span>
+                        <h2>Vino's Cils</h2>
+                        <p>Sublimez votre regard avec nos extensions de cils professionnelles. Du volume classique au mega volume, nos techniques expertes vous garantissent un résultat naturel et durable. Chaque cil est appliqué avec précision pour créer l'effet parfait.</p>
+                        <ul class="vm-svc-list"><li>Rehaussement de cils (kératine)</li><li>Extensions de cils</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Cils">Réserver ce soin</a>
+                    </div>
                 </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Sourcils</h2>
-                    <p class="service-description">Des sourcils parfaitement dessinés qui encadrent votre visage. Nos
-                        experts utilisent des techniques de microblading, lamination et teinture pour créer la forme
-                        idéale qui met en valeur vos traits naturels.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
+            </article>
+            <article class="vm-svc" id="sourcils">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-sourcils.webp" alt="Sourcils" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">02 / 06</span>
+                        <h2>Vino's Sourcils</h2>
+                        <p>Des sourcils parfaitement dessinés qui encadrent votre visage. Nos experts utilisent des techniques de microblading, lamination et teinture pour créer la forme idéale qui met en valeur vos traits naturels.</p>
+                        <ul class="vm-svc-list"><li>Épilation des sourcils</li><li>Threading sourcils &amp; visage</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Sourcils">Réserver ce soin</a>
+                    </div>
+                </div>
+            </article>
+            <article class="vm-svc" id="ongles">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-ongles.webp" alt="Ongles" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">03 / 06</span>
+                        <h2>Vino's Ongles</h2>
+                        <p>Des ongles impeccables qui reflètent votre élégance. Manucure, gel, acrylique ou nail art créatif - nos techniciens qualifiés transforment vos ongles en œuvres d'art avec des produits premium et des finitions durables.</p>
+                        <ul class="vm-svc-list"><li>Pédicure</li><li>Manucure</li><li>Nail art</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Ongles">Réserver ce soin</a>
+                    </div>
+                </div>
+            </article>
+            <article class="vm-svc" id="epilation">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-epilation.webp" alt="Épilation" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">04 / 06</span>
+                        <h2>Vino's Épilation</h2>
+                        <p>Une peau douce et lisse grâce à nos techniques d'épilation expertes. Nous utilisons des cires de qualité supérieure et des méthodes douces pour garantir votre confort tout en offrant des résultats impeccables et durables.</p>
+                        <ul class="vm-svc-list"><li>Sourcils</li><li>Corps</li><li>Visage</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Épilation">Réserver ce soin</a>
+                    </div>
+                </div>
+            </article>
+            <article class="vm-svc" id="maquillage">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-maquillage.webp" alt="Maquillage durable" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">05 / 06</span>
+                        <h2>Vino's Maquillage Durable</h2>
+                        <p>Le maquillage durable pour une beauté sans effort. Sourcils, lèvres ou eye-liner - nos artistes certifiés créent des résultats naturels qui durent, vous permettant de vous réveiller belle chaque jour.</p>
+                        <ul class="vm-svc-list"><li>Blush lèvres</li><li>Sourcils semi-permanents</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Maquillage durable">Réserver ce soin</a>
+                    </div>
+                </div>
+            </article>
+            <article class="vm-svc" id="corps">
+                <div class="vm-wrap vm-svc-row">
+                    <div class="vm-svc-media"><img src="images/service-corps.webp" alt="Soins du corps" loading="lazy" width="1200" height="960"></div>
+                    <div>
+                        <span class="vm-svc-num">06 / 06</span>
+                        <h2>Vino's Corps</h2>
+                        <p>Des soins corporels complets pour votre bien-être. Massages relaxants, soins raffermissants et traitements ciblés - notre approche holistique prend soin de votre corps dans son ensemble pour une beauté rayonnante.</p>
+                        <ul class="vm-svc-list"><li>Massage lymphatique signature</li></ul>
+                        <a class="vm-btn vm-btn-primary" href="rendez-vous.html?service=Soins du corps">Réserver ce soin</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="vm-section is-white">
+            <div class="vm-wrap">
+                <div class="vm-head"><span class="vm-eyebrow">Comment ça se passe</span><h2>Réserver en trois étapes</h2></div>
+                <div class="vm-steps">
+                    <div class="vm-step"><h3>Choisissez votre soin</h3><p>Parcourez nos services et notez celui qui vous attire. Un doute ? Demandez conseil sur WhatsApp.</p></div>
+                    <div class="vm-step"><h3>Envoyez votre demande</h3><p>Indiquez le jour et l'heure souhaités dans le formulaire : votre message part directement sur WhatsApp.</p></div>
+                    <div class="vm-step"><h3>Venez au salon</h3><p>Nous confirmons votre créneau, puis nous vous accueillons à Cotonou – Minontin.</p></div>
                 </div>
             </div>
-
-            <!-- Ongles -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-ongles.webp"
-                        alt="Ongles impeccables" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Ongles</h2>
-                    <p class="service-description">Des ongles impeccables qui reflètent votre élégance. Manucure, gel,
-                        acrylique ou nail art créatif - nos techniciens qualifiés transforment vos ongles en œuvres
-                        d'art avec des produits premium et des finitions durables.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
-                </div>
-            </div>
-
-            <!-- Épilation -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-epilation.webp"
-                        alt="Épilation professionnelle" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Épilation</h2>
-                    <p class="service-description">Une peau douce et lisse grâce à nos techniques d'épilation expertes.
-                        Nous utilisons des cires de qualité supérieure et des méthodes douces pour garantir votre
-                        confort tout en offrant des résultats impeccables et durables.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
-                </div>
-            </div>
-
-            <!-- Maquillage durable -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-maquillage.webp"
-                        alt="Maquillage durable" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Maquillage Durable</h2>
-                    <p class="service-description">Le maquillage durable pour une beauté sans effort. Sourcils,
-                        lèvres ou eye-liner - nos artistes certifiés créent des résultats naturels qui durent, vous
-                        permettant de vous réveiller belle chaque jour.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
-                </div>
-            </div>
-
-            <!-- Corps -->
-            <div class="service-card">
-                <div class="service-image-wrapper">
-                    <img src="images/service-corps.webp"
-                        alt="Soins du corps" class="service-image">
-                </div>
-                <div class="service-content">
-                    <h2 class="service-title">Vino's Corps</h2>
-                    <p class="service-description">Des soins corporels complets pour votre bien-être. Massages
-                        relaxants, soins raffermissants et traitements ciblés - notre approche holistique prend soin de
-                        votre corps dans son ensemble pour une beauté rayonnante.</p>
-                    <a href="rendez-vous.html" class="service-cta">Réserver un rendez-vous</a>
+        </section>
+        <section class="vm-cta">
+            <div class="vm-wrap">
+                <h2>Prête à vous faire chouchouter ?</h2>
+                <p>Réservez en quelques clics ou écrivez-nous directement sur WhatsApp, nous vous répondons pour confirmer votre créneau.</p>
+                <div class="vm-actions">
+                    <a class="vm-btn vm-btn-light" href="rendez-vous.html">Prendre rendez-vous</a>
+                    <a class="vm-btn vm-btn-outline-light" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -1089,6 +963,7 @@
     <script src="scripts/vendor/ScrollTrigger-3.12.4.min.js"></script>
     <script defer src="scripts/main.js"></script>
 
+<script src="scripts/subpages.js" defer></script>
 </body>
 
 </html>

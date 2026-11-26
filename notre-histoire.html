@@ -23,6 +23,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="styles/webflow.css" rel="stylesheet" type="text/css">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/pages.css" rel="stylesheet" type="text/css">
     <link
         href="images/logo1.png"
         rel="shortcut icon" type="image/x-icon">
@@ -43,310 +44,6 @@
             --color--text: var(--dark--text);
             --color--button-background: var(--dark--button-background);
             --color--button-text: var(--dark--button-text);
-        }
-
-        /* Story Page Styles */
-        .story-hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(245, 241, 237, 0.95), rgba(232, 224, 213, 0.95)),
-                url('images/68415b4f7bd03284c234c368_Home-Page-Main-Header.avif') center/cover;
-            padding: 120px 2rem 4rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .story-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(139, 115, 85, 0.1);
-        }
-
-        .story-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .story-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: #8B7355;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        .story-hero p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: #8B7355;
-            line-height: 1.8;
-            font-style: italic;
-        }
-
-        .story-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .story-section:nth-child(even) {
-            background: #FAFAF8;
-        }
-
-        .story-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .story-content.reverse {
-            direction: rtl;
-        }
-
-        .story-content.reverse>* {
-            direction: ltr;
-        }
-
-        .story-text h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: #8B7355;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .story-text h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            color: #A89080;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .story-text p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-text ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .story-text ul li {
-            font-size: 1.05rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .story-text ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.45rem;
-            width: 1rem;
-            height: 1rem;
-            background-color: #8B7355;
-            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2l2.09 6.26L20 9l-4.5 3.87L17 20l-5-3-5 3 1.5-7.13L4 9l5.91-.74z'/></svg>") no-repeat center / contain;
-                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2l2.09 6.26L20 9l-4.5 3.87L17 20l-5-3-5 3 1.5-7.13L4 9l5.91-.74z'/></svg>") no-repeat center / contain;
-        }
-
-        .story-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline {
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 60px;
-            top: 40px;
-            bottom: -40px;
-            width: 2px;
-            background: linear-gradient(to bottom, #8B7355, transparent);
-        }
-
-        .timeline-item:last-child::before {
-            display: none;
-        }
-
-        .timeline-year {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #8B7355;
-            text-align: center;
-            padding: 0.5rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            height: fit-content;
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-content h4 {
-            font-size: 1.5rem;
-            color: #8B7355;
-            margin-bottom: 0.75rem;
-            font-weight: 400;
-        }
-
-        .timeline-content p {
-            font-size: 1.05rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.5rem;
-            color: #8B7355;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .value-card p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #8B7355 0%, #A89080 100%);
-            color: white;
-            text-align: center;
-            padding: 5rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: white;
-            color: #8B7355;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 968px) {
-            .story-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .story-content.reverse {
-                direction: ltr;
-            }
-
-            .story-image {
-                height: 350px;
-            }
-
-            .timeline-item {
-                grid-template-columns: 100px 1fr;
-                gap: 1.5rem;
-            }
-
-            .timeline-item::before {
-                left: 50px;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .story-hero {
-                padding: 100px 1.5rem 3rem;
-            }
-
-            .story-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .timeline {
-                padding: 0 1rem;
-            }
-
-            .timeline-item {
-                grid-template-columns: 80px 1fr;
-                gap: 1rem;
-            }
-
-            .timeline-year {
-                font-size: 1.5rem;
-            }
         }
     </style>
 </head>
@@ -1074,139 +771,63 @@
         <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="story-hero">
-            <div class="story-hero-content">
-                <h1>Notre Histoire</h1>
-                <p>" Une passion transformée en excellence, un engagement envers votre beauté naturelle "</p>
-            </div>
-        </section>
-
-        <!-- Introduction -->
-        <section class="story-section">
-            <div class="story-content">
-                <div class="story-text">
-                    <h2>Une Vision, Une Passion</h2>
-                    <p>
-                        VINO'S MAKEUP est née d'une vision simple mais puissante : révéler la beauté naturelle de
-                        chacune à travers des services professionnels et personnalisés. Notre voyage a commencé avec un
-                        rêve de créer un espace où l'art de la beauté rencontre l'excellence technique.
-                    </p>
-                    <p>
-                        Aujourd'hui, nous sommes fiers d'être devenus une référence en matière de soins esthétiques,
-                        offrant une gamme complète de services allant des extensions de cils au maquillage
-                        durable, en passant par les soins des ongles et du corps.
-                    </p>
-                </div>
+    <main class="vm-main">
+        <section class="vm-hero">
+            <div class="vm-wrap vm-hero-inner">
                 <div>
-                    <img src=""
-                        alt="VINO'S MAKEUP - Beauté dans chaque détail" class="story-image">
+                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Notre histoire</span></nav>
+                    <h1>Notre histoire</h1>
+                    <p class="vm-lead">Une passion transformée en excellence, un engagement envers votre beauté naturelle.</p>
+                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="services.html">Découvrir nos soins</a><a class="vm-btn vm-btn-ghost" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp</a></div>
+                </div>
+                <div class="vm-hero-media"><img src="images/service-maquillage.webp" alt="Maquillage au salon VINO'S MAKEUP" width="1200" height="1000"></div>
+            </div>
+        </section>
+        <section class="vm-quick" aria-label="Informations pratiques">
+            <div class="vm-wrap">
+                <div class="vm-quick-grid">
+                    <a class="vm-quick-item" href="https://www.google.com/maps/search/?api=1&query=Minontin+Cotonou+B%C3%A9nin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>Adresse</small><strong>Cotonou – Minontin</strong></span></a>
+                    <div class="vm-quick-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Horaires</small><strong>Lun – Sam, 09:00 – 19:00</strong></span></div>
+                    <a class="vm-quick-item" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg><span><small>WhatsApp</small><strong>+229 01 60 20 81 77</strong></span></a>
                 </div>
             </div>
         </section>
-
-        <!-- Timeline -->
-        <section class="story-section">
-            <div class="story-text" style="text-align: center; margin-bottom: 3rem;">
-                <h2>Notre Parcours</h2>
-                <p>Une évolution constante vers l'excellence</p>
+        <section class="vm-section">
+            <div class="vm-wrap vm-split">
+                <div class="vm-split-text">
+                    <span class="vm-eyebrow">Une vision, une passion</span>
+                    <h2>Révéler la beauté naturelle de chacune</h2>
+                    <p>VINO'S MAKEUP est née d'une vision simple mais puissante : révéler la beauté naturelle de chacune à travers des services professionnels et personnalisés. Notre voyage a commencé avec un rêve de créer un espace où l'art de la beauté rencontre l'excellence technique.</p>
+                    <p>Aujourd'hui, VINO'S MAKEUP vous accueille à Cotonou, à Minontin, pour une gamme complète de soins : extensions de cils, sourcils, ongles, épilation, maquillage durable et soins du corps.</p>
+                    <a class="vm-btn vm-btn-ghost" href="contact.html">Nous rendre visite</a>
+                </div>
+                <div class="vm-split-media"><img src="images/IMG_2.webp" alt="Portrait maquillé par VINO'S MAKEUP" loading="lazy" width="1200" height="1400"></div>
             </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h4>Les Débuts</h4>
-                        <p>
-                            Ouverture de notre premier salon avec une équipe passionnée et une vision claire : offrir
-                            des services de beauté de qualité supérieure dans un environnement accueillant et
-                            professionnel.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h4>Expansion des Services</h4>
-                        <p>
-                            Lancement de notre gamme complète : cils, sourcils et ongles. Notre équipe
-                            s'agrandit avec des spécialistes certifiés dans chaque domaine.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h4>Innovation et Excellence</h4>
-                        <p>
-                            Introduction de l'épilation, du maquillage durable et des soins du corps. Nous investissons dans les
-                            dernières technologies et formations pour garantir des résultats exceptionnels.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h4>Reconnaissance</h4>
-                        <p>
-                            VINO'S MAKEUP devient une référence reconnue à Cotonou. Des milliers de clientes
-                            satisfaites et une réputation d'excellence établie.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h4>Aujourd'hui</h4>
-                        <p>
-                            Nous continuons d'innover et de nous améliorer, toujours guidés par notre engagement :
-                            célébrer votre beauté à travers chaque touche précise.
-                        </p>
-                    </div>
+        </section>
+        <section class="vm-section is-white">
+            <div class="vm-wrap"><p class="vm-quote">Nous nous engageons à sublimer votre beauté naturelle en offrant des services personnalisés. Chaque cliente est unique, et nous adaptons nos techniques pour révéler le meilleur de votre beauté.</p></div>
+        </section>
+        <section class="vm-section">
+            <div class="vm-wrap">
+                <div class="vm-head"><span class="vm-eyebrow">Ce que nous faisons</span><h2>Nos spécialités</h2><p>Six univers pour prendre soin de vous, du regard au bien-être.</p></div>
+                <div class="vm-tiles"><a class="vm-tile" href="services.html#cils"><img src="images/service-cils.webp" alt="Cils" loading="lazy" width="800" height="1000"><span>Cils</span></a><a class="vm-tile" href="services.html#sourcils"><img src="images/service-sourcils.webp" alt="Sourcils" loading="lazy" width="800" height="1000"><span>Sourcils</span></a><a class="vm-tile" href="services.html#ongles"><img src="images/service-ongles.webp" alt="Ongles" loading="lazy" width="800" height="1000"><span>Ongles</span></a><a class="vm-tile" href="services.html#epilation"><img src="images/service-epilation.webp" alt="Épilation" loading="lazy" width="800" height="1000"><span>Épilation</span></a><a class="vm-tile" href="services.html#maquillage"><img src="images/service-maquillage.webp" alt="Maquillage durable" loading="lazy" width="800" height="1000"><span>Maquillage durable</span></a><a class="vm-tile" href="services.html#corps"><img src="images/service-corps.webp" alt="Soins du corps" loading="lazy" width="800" height="1000"><span>Soins du corps</span></a></div>
+            </div>
+        </section>
+        <section class="vm-section is-white">
+            <div class="vm-wrap">
+                <div class="vm-head"><span class="vm-eyebrow">Notre approche</span><h2>Un soin, du début à la fin</h2></div>
+                <div class="vm-steps is-four">
+                    <div class="vm-step"><h3>Écoute</h3><p>Nous prenons le temps de comprendre ce que vous aimez et ce que vous attendez.</p></div>
+                    <div class="vm-step"><h3>Conseil</h3><p>Nous vous proposons le soin et le rendu qui conviennent à votre style.</p></div>
+                    <div class="vm-step"><h3>Précision</h3><p>Chaque geste est réalisé avec soin, dans un cadre propre et apaisant.</p></div>
+                    <div class="vm-step"><h3>Naturel</h3><p>Nous cherchons toujours un résultat qui vous ressemble et qui dure.</p></div>
                 </div>
             </div>
         </section>
-
-        <!-- Mission & Values -->
-        <section class="story-section" style="background: white;">
-            <div class="story-content reverse">
-                <div class="story-text">
-                    <h2>Notre Mission</h2>
-                    <p>
-                        Nous nous engageons à sublimer votre beauté naturelle en offrant des services personnalisés de
-                        la plus haute qualité. Chaque cliente est unique, et nous adaptons nos techniques pour révéler
-                        le meilleur de votre beauté.
-                    </p>
-                    <h3>Nos Engagements</h3>
-                    <ul>
-                        <li>Excellence technique et formation continue de nos spécialistes</li>
-                        <li>Produits premium et équipements de dernière génération</li>
-                        <li>Hygiène irréprochable et protocoles de sécurité stricts</li>
-                        <li>Écoute attentive et conseils personnalisés</li>
-                        <li>Résultats naturels et durables</li>
-                        <li>Expérience client exceptionnelle à chaque visite</li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="" alt="Excellence VINO'S MAKEUP"
-                        class="story-image">
-                </div>
-            </div>
-        </section>
-
-        <!-- Values Grid -->
-        <section class="story-section">
-            <div class="story-text" style="text-align: center; margin-bottom: 3rem;">
-                <h2>Nos Valeurs</h2>
-                <p>Les principes qui guident chacune de nos actions</p>
-            </div>
-
-            <div class="values-grid">
+        <section class="vm-section">
+            <div class="vm-wrap">
+                <div class="vm-head"><span class="vm-eyebrow">Nos valeurs</span><h2>Les principes qui nous guident</h2></div>
+                <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M3 12h3M18 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/><circle cx="12" cy="12" r="3"/></svg></div>
                     <h3>Excellence</h3>
@@ -1248,13 +869,17 @@
                     <p>Nous créons un environnement chaleureux où chaque cliente se sent valorisée et écoutée.</p>
                 </div>
             </div>
+            </div>
         </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <h2>Rejoignez Notre Histoire</h2>
-            <p>Faites partie de notre famille et découvrez l'expérience VINO'S MAKEUP</p>
-            <a href="rendez-vous.html" class="cta-button">Prendre Rendez-vous</a>
+        <section class="vm-cta">
+            <div class="vm-wrap">
+                <h2>Prête à vous faire chouchouter ?</h2>
+                <p>Réservez en quelques clics ou écrivez-nous directement sur WhatsApp, nous vous répondons pour confirmer votre créneau.</p>
+                <div class="vm-actions">
+                    <a class="vm-btn vm-btn-light" href="rendez-vous.html">Prendre rendez-vous</a>
+                    <a class="vm-btn vm-btn-outline-light" href="https://wa.me/2290160208177" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg> WhatsApp</a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -1332,6 +957,7 @@
     <script src="scripts/vendor/ScrollTrigger-3.12.4.min.js"></script>
     <script defer src="scripts/main.js"></script>
 
+<script src="scripts/subpages.js" defer></script>
 </body>
 
 </html>

@@ -23,6 +23,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="styles/webflow.css" rel="stylesheet" type="text/css">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/pages.css" rel="stylesheet" type="text/css">
     <link
         href="images/logo1.png"
         rel="shortcut icon" type="image/x-icon">
@@ -46,33 +47,12 @@
         }
 
         /* Gallery Page Styles */
-        .gallery-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #F5F1ED 0%, #E8E0D5 100%);
-            padding: 120px 2rem 4rem;
-            text-align: center;
-        }
-
-        .gallery-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: #8B7355;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        .gallery-hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: #A89080;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
         .gallery-filters {
+            position: sticky;
+            top: var(--vm-nav);
+            z-index: 5;
+            background: rgba(249, 246, 241, 0.92);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: center;
             gap: 1rem;
@@ -236,10 +216,6 @@
         }
 
         @media (max-width: 480px) {
-            .gallery-hero {
-                padding: 100px 1.5rem 3rem;
-            }
-
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -970,11 +946,16 @@
         <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
       </div>
 
-    <main>
-        <section class="gallery-hero">
-            <div>
-                <h1>Notre Galerie</h1>
-                <p>Découvrez nos réalisations et laissez-vous inspirer par la beauté de nos créations</p>
+    <main class="vm-main">
+                <section class="vm-hero">
+            <div class="vm-wrap vm-hero-inner">
+                <div>
+                    <nav class="vm-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span aria-current="page">Galerie</span></nav>
+                    <h1>Notre galerie</h1>
+                    <p class="vm-lead">Nos réalisations en images : cils, sourcils, ongles, épilation, maquillage et soins du corps.</p>
+                    <div class="vm-actions"><a class="vm-btn vm-btn-primary" href="#gallery">Voir les réalisations</a><a class="vm-btn vm-btn-ghost" href="https://www.instagram.com/vinosmakeup/" target="_blank" rel="noopener">Instagram</a></div>
+                </div>
+                <div class="vm-hero-media"><img src="images/service-ongles.webp" alt="Soin des mains chez VINO'S MAKEUP" width="1200" height="1000"></div>
             </div>
         </section>
 
@@ -1093,6 +1074,17 @@
                 </div>
             </div>
 
+        </section>
+    
+        <section class="vm-cta">
+            <div class="vm-wrap">
+                <h2>Envie du même résultat ?</h2>
+                <p>Retrouvez plus de réalisations sur Instagram, ou réservez votre soin dès maintenant.</p>
+                <div class="vm-actions">
+                    <a class="vm-btn vm-btn-light" href="rendez-vous.html">Prendre rendez-vous</a>
+                    <a class="vm-btn vm-btn-outline-light" href="https://www.instagram.com/vinosmakeup/" target="_blank" rel="noopener">Suivre @vinosmakeup</a>
+                </div>
+            </div>
         </section>
     </main>
 
